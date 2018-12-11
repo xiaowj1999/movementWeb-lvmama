@@ -1,0 +1,233 @@
+@import "base.less";
+
+body {
+    background-color: #f1f1f1;
+}
+// 头部样式的开始
+#header {
+    position: fixed;
+    height: 44px;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+    background-color: #fff;
+    width: 100vw;
+    display: flex;
+    text-align: center;
+    line-height: 44px;
+    >.address {
+        width: 70px;
+        height: 44px;
+       color: @main-color;
+      &::after {
+          content: "v";
+          display: inline-block;
+        
+      }
+    }
+    >span{
+        flex: 1;
+    }
+    >.info{
+        // padding-right: 5px;
+        width: 42px;
+        height: 44px;
+        >img {
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
+
+// 轮播图区域的开始
+#slide {
+    margin-top: 44px;
+    .swiper-pagination-bullet{
+        background-color: #fff;
+    }
+         
+    >.icon-logo {
+        background-image: url("../images/icon/nav.png");
+       
+    }
+    >.swiper-container {
+        img {
+            width: 100vw;
+        }
+    }
+}
+
+//旅游方式区域的开始
+#ways {
+    padding: 10px 0px;
+    background-color: @bg-color;
+    >.way-tabs{
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            flex: 33.33vw;
+            text-align: center;
+            // &:nth-of-type(n+4){
+            //     padding-top: 5px;
+            // }
+            >a {
+                display: block;
+            
+                img{
+                    width: 100%;
+                    padding: 2px;
+                }
+            }
+        }
+    }
+}
+
+// 旅游导航区域
+#nav {
+    width: 100vw;
+    background-color: @bg-color;
+    // box-shadow: 0px 0px 2px 0px @bd-color;
+    >.nav-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        >li {
+            flex: 25vw;
+            &:nth-of-type(n+5){
+                border-top: .5px solid @bd-color;
+            }
+            &:not(:nth-of-type(4n)){
+                border-right: .5px solid @bd-color;
+            }
+            a{
+                display: block;
+                text-align: center;
+                img {
+                    // width: 78.5px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    >.teJia {
+        width: 100vw;
+        display: flex;
+        padding: 10px 0px;
+        >.left {
+            flex: 50vw;
+            a{
+                display: block;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        >.right{
+            flex: 50vw;
+            a{
+                display: block;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+
+// 旅游热门景区
+#main {
+    background-color: #f1f1f1;
+    >.hots {
+       
+        >.hots-title {
+            background-color: #f1f1f1;
+           h3 {
+               padding-top: 6px;
+               padding-left: 10px;
+               height: 35px;
+               width: 100vw;
+           }
+        }
+        >.hots-content {
+            box-shadow: 0px 0px 2px 0px @bd-color;
+            a{
+                display: block;
+                img{
+                    width: 100vw;
+                }
+            }
+        }
+    }
+
+    >.weekend {
+        background-color: #fff;
+        margin-top: 10px;
+        >.week-title {
+            display: flex;
+            >a {
+                height: 44px;
+                flex: 50vw;
+                display: inline-block;
+                line-height: 44px;
+                text-align: center;
+                // padding: 0px 60px;
+                &:nth-of-type(1){
+                    color: @main-color;
+                }
+                &:hover {
+                    color: @main-color;
+                }
+            }
+        }
+        >.week-content {
+            background-color: #f1f1f1;
+            >.music {
+                background-color: #fff;
+                margin-bottom: 10px;
+                >a{
+                    display: block;
+                    >img {
+                        width: 100vw;
+                    }
+                    >span {
+                        display: block;
+                        color: #000;
+                        padding-left: 5px;
+                    }
+                }
+            }
+            >.more {
+                margin-bottom: 10px;
+                background-color: #fff;
+                width: 100vw;
+                height: 30px;
+                text-align: center;
+                line-height: 30px;
+            
+            }
+        }
+    }
+}
+
+// 底部区域的开始
+#footer{
+    
+    height: 30px;
+    background-color: @main-color;
+    position: relative;
+    a{
+        color: #fff;
+        font-weight: bold;
+        line-height: 30px;
+        display: inline-block;
+        &:first-child{
+            padding: 0px 15px 0px 10px;
+        }
+        &:last-child {
+            position: absolute;
+            right: 10px;
+        }
+    }
+}

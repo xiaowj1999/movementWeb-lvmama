@@ -1,0 +1,483 @@
+/* 1. 放样式初始化 */
+* {
+  margin: 0px;
+  padding: 0px;
+  /* 移动端都会设置盒模型为border-box */
+  box-sizing: border-box;
+  /* 去掉内边框 */
+  outline: 0;
+  /* 去除a标签的按住高亮背景色 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+input,
+select {
+  /* 消除输入框和按钮的原生外观，在iOS上加上这个属性才能给按钮和输入框自定义样式 */
+  /* 另外，select加上这个属性后，select的高度就可以改变了 */
+  -webkit-appearance: none;
+}
+/* 去掉小圆点 */
+li {
+  list-style: none;
+}
+img {
+  /* 去除图片3px间隙 */
+  vertical-align: middle;
+}
+a {
+  background: transparent;
+  text-decoration: none;
+  /* 设置a标签的高亮背景色 手指按住的时候会出现 */
+  -webkit-tap-highlight-color: transparent;
+  color: #666;
+}
+/* 样式初始化 */
+html {
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333333;
+  background-color: white;
+  height: 100%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+a:active {
+  outline: 0;
+}
+a:active {
+  color: #006699;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+  border: 0;
+  outline: 0;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+html,
+button,
+input,
+select,
+textarea {
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+form,
+blockquote {
+  margin: 0;
+}
+ul,
+ol,
+li,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none outside none;
+}
+h1,
+h2,
+h3 {
+  line-height: 2;
+  font-weight: normal;
+}
+h1 {
+  font-size: 18px;
+}
+h2 {
+  font-size: 16px;
+}
+h3 {
+  font-size: 14px;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #cccccc;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #cccccc;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #cccccc;
+}
+/* 2. 放所有页面都会用到公共类 */
+.bt {
+  border-top: 1px solid #ccc;
+}
+.bl {
+  border-left: 1px solid #ccc;
+}
+.br {
+  border-right: 1px solid #ccc;
+}
+.bb {
+  border-bottom: 1px solid #ccc;
+}
+body {
+  background-color: #f1f1f1;
+}
+#header {
+  position: fixed;
+  height: 44px;
+  top: 0px;
+  left: 0px;
+  z-index: 999;
+  background-color: #fff;
+  width: 100vw;
+  display: flex;
+  text-align: center;
+  line-height: 44px;
+}
+#header > .address {
+  width: 70px;
+  height: 44px;
+  color: #d3079e;
+}
+#header > .address::after {
+  content: "v";
+  display: inline-block;
+}
+#header > span {
+  flex: 1;
+}
+#header > .info {
+  width: 42px;
+  height: 44px;
+}
+#header > .info > img {
+  width: 25px;
+  height: 25px;
+}
+#slide {
+  margin-top: 44px;
+}
+#slide .swiper-pagination-bullet {
+  background-color: #fff;
+}
+#slide > .icon-logo {
+  background-image: url("../images/icon/nav.png");
+}
+#slide > .swiper-container img {
+  width: 100vw;
+}
+#ways {
+  padding: 10px 0px;
+  background-color: #f7f7f7;
+}
+#ways > .way-tabs {
+  display: flex;
+  flex-wrap: wrap;
+}
+#ways > .way-tabs li {
+  flex: 33.33vw;
+  text-align: center;
+}
+#ways > .way-tabs li > a {
+  display: block;
+}
+#ways > .way-tabs li > a img {
+  width: 100%;
+  padding: 2px;
+}
+#nav {
+  width: 100vw;
+  background-color: #f7f7f7;
+}
+#nav > .nav-tabs {
+  display: flex;
+  flex-wrap: wrap;
+}
+#nav > .nav-tabs > li {
+  flex: 25vw;
+}
+#nav > .nav-tabs > li:nth-of-type(n+5) {
+  border-top: 0.5px solid #ccc;
+}
+#nav > .nav-tabs > li:not(:nth-of-type(4n)) {
+  border-right: 0.5px solid #ccc;
+}
+#nav > .nav-tabs > li a {
+  display: block;
+  text-align: center;
+}
+#nav > .nav-tabs > li a img {
+  width: 100%;
+}
+#nav > .teJia {
+  width: 100vw;
+  display: flex;
+  padding: 10px 0px;
+}
+#nav > .teJia > .left {
+  flex: 50vw;
+}
+#nav > .teJia > .left a {
+  display: block;
+}
+#nav > .teJia > .left a img {
+  width: 100%;
+}
+#nav > .teJia > .right {
+  flex: 50vw;
+}
+#nav > .teJia > .right a {
+  display: block;
+}
+#nav > .teJia > .right a img {
+  width: 100%;
+}
+#main {
+  background-color: #f1f1f1;
+}
+#main > .hots > .hots-title {
+  background-color: #f1f1f1;
+}
+#main > .hots > .hots-title h3 {
+  padding-top: 6px;
+  padding-left: 10px;
+  height: 35px;
+  width: 100vw;
+}
+#main > .hots > .hots-content {
+  box-shadow: 0px 0px 2px 0px #ccc;
+}
+#main > .hots > .hots-content a {
+  display: block;
+}
+#main > .hots > .hots-content a img {
+  width: 100vw;
+}
+#main > .weekend {
+  background-color: #fff;
+  margin-top: 10px;
+}
+#main > .weekend > .week-title {
+  display: flex;
+}
+#main > .weekend > .week-title > a {
+  height: 44px;
+  flex: 50vw;
+  display: inline-block;
+  line-height: 44px;
+  text-align: center;
+}
+#main > .weekend > .week-title > a:nth-of-type(1) {
+  color: #d3079e;
+}
+#main > .weekend > .week-title > a:hover {
+  color: #d3079e;
+}
+#main > .weekend > .week-content {
+  background-color: #f1f1f1;
+}
+#main > .weekend > .week-content > .music {
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+#main > .weekend > .week-content > .music > a {
+  display: block;
+}
+#main > .weekend > .week-content > .music > a > img {
+  width: 100vw;
+}
+#main > .weekend > .week-content > .music > a > span {
+  display: block;
+  color: #000;
+  padding-left: 5px;
+}
+#main > .weekend > .week-content > .more {
+  margin-bottom: 10px;
+  background-color: #fff;
+  width: 100vw;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+#footer {
+  height: 30px;
+  background-color: #d3079e;
+  position: relative;
+}
+#footer a {
+  color: #fff;
+  font-weight: bold;
+  line-height: 30px;
+  display: inline-block;
+}
+#footer a:first-child {
+  padding: 0px 15px 0px 10px;
+}
+#footer a:last-child {
+  position: absolute;
+  right: 10px;
+}
